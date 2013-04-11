@@ -1,0 +1,13 @@
+<%= simple_form_for(@item, html: { class: 'form-horizonal' }) do |f| %>
+
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Aisle</legend>
+  
+    <%= f.input :name %>
+    <%= f.association :aisle, :as => :radio_buttons %>    
+  
+  <div class="form-actions">
+      <%= link_to "Cancel", items_path, :class => "btn small grey" %> <%= f.button :submit, :class => 'btn btn-primary' %>
+  </div>
+  </fieldset>
+<% end %>

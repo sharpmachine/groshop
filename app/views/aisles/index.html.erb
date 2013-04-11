@@ -1,0 +1,23 @@
+<h1>Listing aisles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aisles.each do |aisle| %>
+  <tr>
+    <td><%= aisle.name %></td>
+    <td><%= link_to 'Show', aisle %></td>
+    <td><%= link_to 'Edit', edit_aisle_path(aisle) %></td>
+    <td><%= link_to 'Destroy', aisle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Aisle', new_aisle_path %>
